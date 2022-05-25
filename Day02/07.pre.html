@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pre</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- {{}} 是一个特殊的语法, 其内容是 JS 代码 -->
+    <div>{{ 8 + 8 }}</div>
+    <!-- pre: 显示代码本身, 内容作为普通字符串展示 -->
+    <div v-pre>{{ 8 + 8 }}</div>
+  </div>
+
+  <script src="./vendor/vue.js"></script>
+  <script>
+    new Vue({ el: '#app' })
+  </script>
+</body>
+
+</html>

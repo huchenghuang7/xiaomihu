@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>作业</title>
+  <style>
+    .ok {
+      color: green
+    }
+
+    .err {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <!-- @事件 -->
+    <!-- :属性="JS代码" -->
+    <button @click="num--" :disabled="num == 1">-</button>
+    <!-- {{}}: vue提供的语法, 相当于 JS的模板字符串的 ${} -->
+    <!-- 用于在 标签中, 书写 JS 代码 -->
+    <span :class="{ok: num<5, err:num>5}">{{num}}</span>
+    <button @click="num++" :disabled="num == 20">+</button>
+
+    <div>单价: {{price}}</div>
+    <!-- 动态class  :class="{类名: true/false}" -->
+    <div :class="{ok: num<5, err: num>5}">总价: {{num * price}}</div>
+  </div>
+
+  <script src="./vendor/vue.js"></script>
+  <script>
+    // new: 触发 Vue构造函数, 生成一个对象类型, 需要在初始化时添加一些固定的配置
+    // el : element 元素, 其值是 id选择器,  设定Vue管理的元素是谁
+    // data : 在元素中使用的各种数据
+    new Vue({
+      el: '#app',
+      data: { num: 5, price: 2000 }
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>显示与隐藏</title>
+  <style>
+    #box {
+      background-color: lightgray;
+      width: 200px;
+      height: 200px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <button @click="show = true">显示</button>
+    <button @click="show = false">隐藏</button>
+    <!-- 变量值 = 其反值 -->
+    <button @click="show = !show">切换</button>
+    <!-- 指令: directive -->
+    <!-- 每个元素都拥有很多系统属性, 也可以用 data- 声明自定义属性 -->
+    <!-- 而 vue 也提供了一些属性, 都是 v- 开头的, 称为 指令 -->
+
+    <!-- v-show: 值是false 会自动添加 display:none -->
+    <div v-show="show" id="box"></div>
+
+    <!-- 之前学过的 v-bind   v-on 都是指令, 因为太常用, 所以有语法糖 -->
+    <!--           :         @ -->
+  </div>
+
+  <script src="./vendor/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      // vue核心思想: 数据驱动DOM变化,  凡是变化的DOM必然捆绑一个数据
+      data: { show: false }
+    })
+  </script>
+
+</body>
+
+</html>

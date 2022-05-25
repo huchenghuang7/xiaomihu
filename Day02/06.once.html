@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>once 一次性</title>
+</head>
+
+<body>
+  <div id="app">
+    <button @click="num++">num+1</button>
+    <p>{{num}}</p>
+    <!-- 指令 v-once: 一次性渲染, 数据变化时不会随着变化 -->
+    <p v-once>初始值: {{num}}</p>
+  </div>
+
+  <script src="./vendor/vue.js"></script>
+  <script>
+    new Vue({ el: '#app', data: { num: 10 } })
+  </script>
+</body>
+
+</html>

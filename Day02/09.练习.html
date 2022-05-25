@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>练习</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 利用循环, 把skills显示在 a 标签里 -->
+    <a href="" v-for="val in skills">{{val}}</a>
+    <ul>
+      <li v-for="emp in emps">{{emp.ename}} - {{emp.age}}</li>
+      <!-- 支持解构语法 -->
+      <li v-for="{ename,age} in emps">{{ename}} {{age}}</li>
+    </ul>
+  </div>
+
+  <script src="./vendor/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        skills: ['express', 'vue', 'dom', 'mysql', 'js', 'html'],
+        emps: [
+          { ename: "铭铭", age: 32 },
+          { ename: "亮亮", age: 34 },
+          { ename: "涛涛", age: 38 },
+          { ename: "凯凯", age: 31 },
+        ]
+      }
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>for</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- for(let key in obj){} -->
+    <!-- for(let value of arr){} -->
+
+    <!-- 作者 把 for 循环和 DOM元素直接合并 -->
+    <!-- 直接在DOM元素上循环, 自动生成多个 -->
+    <!-- 格式 v-for="变量 of 数组" -->
+    <button v-for="value of names">{{value}}</button>
+    <!-- of 和 in 都可以作为中间词, 效果相同 -->
+    <hr>
+    <button v-for="x in names">{{x}}</button>
+    <hr>
+    <!-- 支持遍历数字 -->
+    <button v-for="n in 10">{{n}}</button>
+    <!-- 带有序号的遍历 -->
+    <ul>
+      <!-- v-for="(值, 序号) in 数组" -->
+      <li v-for="(value, index) in names">{{index}} . {{value}}</li>
+    </ul>
+  </div>
+
+  <script src="./vendor/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        // 需求: 把数据放在按钮标签里, 显示到页面;    先map -> 拼接 -> 添加
+        names: ['亮亮', '铭铭', '楠楠', '涛涛']
+      }
+    })
+  </script>
+</body>
+
+</html>

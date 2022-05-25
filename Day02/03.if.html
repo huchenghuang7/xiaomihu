@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>if</title>
+  <style>
+    #box {
+      background-color: lightgray;
+      width: 200px;
+      height: 200px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <button @click="a = true">添加</button>
+    <button @click="a = false">移除</button>
+    <div>a: {{a}}</div>
+    <!-- 指令 v-if   如果条件true 添加元素;  false 移除元素 -->
+    <!-- 面试题: v-if 和 v-show 都能让元素隐藏, 区别在哪里?? -->
+    <!-- v-show: 利用css display:none -- 消耗资源少, 适合频繁切换 -->
+    <!-- v-if : 利用 删除DOM元素实现 -- 消耗资源更多, 适合不频繁的切换 -->
+    <!-- 通俗来说: 你希望元素永远消失, 用if;  元素短期内消失 show -->
+    <div id="box" v-if="a"></div>
+  </div>
+
+  <script src="./vendor/vue.js"></script>
+  <script>
+    new Vue({ el: '#app', data: { a: false } })
+  </script>
+</body>
+
+</html>

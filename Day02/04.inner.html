@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>inner</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 原生DOM中
+       innerHTML: 标签的内容, 赋值当做HTML进行解析  
+       innerText: 标签的内容, 赋值当做普通文本显示 
+
+       会覆盖标签中原有内容
+      -->
+    <div v-text="msg">Hello</div>
+    <div v-html="msg">小马哥</div>
+  </div>
+
+  <script src="./vendor/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: { msg: "<h1>Welcome to Vue!</h1>" }
+    })
+  </script>
+</body>
+
+</html>

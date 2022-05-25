@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>else</title>
+</head>
+
+<body>
+  <div id="app">
+    <h3>小马哥的月考分数: {{score}}</h3>
+    <button @click="getScore">随机获取分数</button>
+    <p v-if="score < 60" style="color:red">2203班再见!</p>
+    <p v-else-if="score>=60 && score<80">加油! 再接再厉!</p>
+    <p v-else-if="score>=80 && score<=99">优秀! 你是最棒的!</p>
+    <p v-else>逆天! 作弊了吧??</p>
+
+    <!-- if  elseif else : 复习 亮亮部分 -->
+  </div>
+
+  <script src="./vendor/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: { score: null },
+      methods: {
+        getScore() {
+          // floor: 向下取整, 例如 100.9999  也是100
+          this.score = Math.floor(Math.random() * 101)
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
